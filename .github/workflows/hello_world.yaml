@@ -13,10 +13,13 @@ jobs:
     - id: s00
       # running some shell bash command
       run: echo "current time in Github is $(date)"
+    - id: s01
+      # create a value and pass to the next step
+      run: echo "CURR_TIME=$(date)" >> $GITHUB_OUTPUT
     - id: s02
       uses: mscoutermarsh/cowsays-action@master
       with: 
-        text: 'moo mooooooo'
+        text: 'moo mooooooo ${{ steps.s01.outputs.CURR_DATE }}'
         color: blue
     # - id: s01
     #   # cat the file
