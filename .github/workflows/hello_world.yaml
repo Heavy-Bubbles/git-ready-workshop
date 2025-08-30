@@ -19,7 +19,7 @@ jobs:
     - id: s02
       uses: mscoutermarsh/cowsays-action@master
       with: 
-        text: 'moo mooooooo ${{ steps.s01.outputs.CURR_DATE }}'
+        text: 'moo mooooooo ${{ steps.s01.outputs.CURR_DATE }}, ${{ github.repository }}'
         color: blue
     # - id: s01
     #   # cat the file
